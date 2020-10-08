@@ -27,7 +27,7 @@ public class MyServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Hello World!<br>Welcome to the Development Environment set up. ");
+		response.getWriter().append("Hello World! Welcome to the Development Environment set up. ");
 	}
 
 	/**
