@@ -35,7 +35,7 @@ public class Insert extends HttpServlet {
       double sPrice = Double.parseDouble(sellPrice);
       
       Connection connection = null;
-      String insertSql = " INSERT INTO testTable (id, NAME, BUY_PRICE, QUANTITY, SELL_PRICE, EST_RETURN) values (default, ?, ?, ?, ?, ?)";
+      String insertSql = " INSERT INTO stockTable(id, NAME, BUY_PRICE, QUANTITY, SELL_PRICE, EST_RETURN) values (default, ?, ?, ?, ?, ?)";
 
       try {
          DatabaseConnection.getDBConnection();
@@ -45,7 +45,7 @@ public class Insert extends HttpServlet {
          preparedStmt.setString(2, buyPrice);
          preparedStmt.setString(3, quantity);
          preparedStmt.setString(4, sellPrice);
-         preparedStmt.setString(5, String.valueOf((sPrice - bPrice)));
+         preparedStmt.setString(5, String.valueOf(count * (sPrice - bPrice)));
                   
          preparedStmt.execute();
          connection.close();
@@ -69,11 +69,12 @@ public class Insert extends HttpServlet {
             "  <li><b>Purchase Price</b>: " + buyPrice + "\n" + //
             "  <li><b>Quantity</b>: " + quantity + "\n" + //
             "  <li><b>Sell Price</b>: " + sellPrice + "\n" + //
-            "  <li><b>Estimated Return of Investment</b>: " + (sPrice - bPrice) + "\n" + //
+            "  <li><b>Estimated Return of Investment</b>: " + count * (sPrice - bPrice) + "\n" + //
 
             "</ul>\n");
 
       out.println("<a href=/webproject/insert.html>Insert Another Stock</a> <br>");
+      out.println("<a href=/webproject/showReturn.html>Show Estimated Return</a> <br>");
       out.println("</body></html>");
    }
 

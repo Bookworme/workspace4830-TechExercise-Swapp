@@ -32,24 +32,21 @@ footer {
 
 <body>
 <header>
-<h1> Insert Data </h1>
+<h1> Show Estimated Return</h1>
 </header>
 
 <nav>
-<a href="/webproject/showReturn.html">Search Stocks</a> <br>
+<a href="/webproject/insert.html">Insert More Stocks</a> <br>
 </nav>
 
 <section>
 	<h1>User Input</h1>
 	
-	<form action="Insert" method="POST">
+	<form action="ShowReturn" method="POST">
 	
-		Stock Name: <input type="text" name="stockName"> <br />
-		Purchase Price: <input type="text" name="buyPrice"> <br />
-		Quantity: <input type="text" name="quantity"> <br />
-		Expected Sell Price: <input type="text" name="sellPrice"> <br />
+		Stock Name to Show Estimated Return: <input type="text" name="keyword"> <br />
 		
-		<input type="submit" value="Submit" />
+		<input type="submit" value="Search" />
 	</form>
 
 </section>
